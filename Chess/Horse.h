@@ -1,11 +1,15 @@
 #pragma once
 #include "Figure.h"
+/*class Horse  // наследуется от Figure
+{
+	bool CanMoveToPosition(xPos, yPos) - возвращает true если фигура смогла так перейти
+};
+*/
     class Horse : public Figure
     {
     public:
-        Horse(int xPos, int yPos, Color clr);
-        // наследуется от Figure 
-        bool CanMoveToPosition( int xPos,   int yPos);     //-возвращает true если фигура смогла так перейти
+        Horse(int xPos, int yPos, Color clr);       
+        bool CanMoveToPosition( int xPos,   int yPos);
     private:
 
     };

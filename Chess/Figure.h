@@ -1,6 +1,14 @@
 #pragma once
 #include<iostream>
-    enum Color {
+/*class Figure
+{
+	Figure(xPos, yPos) - устанавливает фигуру в начальное положение
+		Color GetColor()  // Black и White
+		GetFigureId() - у каждой фигуры есть идентификатор, тип не важен, главное чтобы он 
+		был уникальным
+		SetCurrentCoordinates(xPos, yPos)
+};*/
+enum Color {
         white,
         black
     };
@@ -12,13 +20,11 @@
     class Figure {
     public:
        
-        Figure(int xPos, int yPos,Color clr);       //- устанавливает фигуру в начальное положение
-       // void SetFigureLevel();
-        Color GetColor();                                    // Black и White
-                                        //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
-       // void GetFigureId();                                       //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
-        //SetCurrentCoordinates(xPos, yPos) {};
+        Figure(int xPos, int yPos,Color clr);      
+        Color GetColor();                               
         virtual bool CanMoveToPosition(int xPos, int yPos)=0;
+        // void GetFigureId();                                       //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
+        //SetCurrentCoordinates(xPos, yPos);
         //virtual bool MoveToPosition(int xPos, int yPos)=0;
 
     protected:
