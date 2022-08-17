@@ -16,8 +16,8 @@ Horse::Horse(int xPos, int yPos, Color clr) :
             
             int resX = 0;
             int resY = 0;
-            resX = abs(xPos - 0/*m_xPos*/);
-            resY = abs(yPos - 0/*m_yPos */);
+            resX = abs(xPos - GetX());
+            resY = abs(yPos - GetY());
             if (resX == 2 && resY == 1 || resX == 1 && resY == 2) {
 
                 return true;
