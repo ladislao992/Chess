@@ -17,12 +17,17 @@
                                         //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
         void GetFigureId();                                       //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
         //SetCurrentCoordinates(xPos, yPos) {};
-        
+        virtual bool CanMoveToPosition(int xPos, int yPos)=0;
+       protected:
+        int GetX();
+        int GetY();
     private:
         int m_xPos;
         int m_yPos;
         Color m_color;
-        int* m_id;
+        int* m_id=nullptr;
        
     };
 
+    inline int Figure::GetX() { return m_xPos; }
+    inline int Figure::GetY() { return m_yPos; }

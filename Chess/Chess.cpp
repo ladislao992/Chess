@@ -31,13 +31,16 @@ class ÑhessField {
 #include "Figure.h"
 #include "King.h"
 #include "Horse.h"
+bool CanMoveThere(Figure* fig, int xPos, int yPos) {
+	return fig->CanMoveToPosition(xPos, yPos);
+}
 
 int main()
 {
-	Horse::Figure el1( 1, B, white);
-	King::Figure el2( 1, D, white );
-	Horse::Figure el3( 8, G, black );
-	King::Figure el4( 8, D, black );
+	Horse el1( 1, B, white);
+	King el2( 1, D, white );
+	Horse el3( 8, G, black );
+	King el4( 8, D, black );
 
 	el1.GetFigureId();
 	el2.GetFigureId();

@@ -3,10 +3,12 @@
 
     class King : public Figure
     {
-
-        // наследуется от Figure 
     public:
-        bool CanMoveToPosition( int xPos,  int yPos);               //-возвращает true если фигура смогла так перейти
+        King(int xPos, int yPos, Color clr);
+        // наследуется от Figure 
+
+        bool CanMoveToPosition( int xPos,  int yPos) override;               //-возвращает true если фигура смогла так перейти
     private:
 
     };
+

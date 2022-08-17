@@ -1,5 +1,12 @@
 #include "Horse.h"
 
+
+Horse::Horse(int xPos, int yPos, Color clr) :
+    Figure(xPos, yPos, clr)
+{
+
+}
+
     bool Horse::CanMoveToPosition( int xPos,  int yPos) {
             if (xPos <= 0 || xPos > 8 || yPos > 8 || yPos <= 0) {
                 std::cout << "Desk have 8*8 coordinates max.";
