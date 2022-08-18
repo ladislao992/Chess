@@ -27,12 +27,13 @@
 	figureId4.xPos = D;
 	figureId1.color = ClrBlack;*/
 #include "Figure.h"
-class ChessField
+class ChessField 
 {
 public:
 	
 	ChessField();
 	void SetMovePos();
+	int GetId();
 
 	bool Step();
 private:
@@ -41,6 +42,7 @@ private:
 	Figure::CurFigure m_figureId2;
 	Figure::CurFigure m_figureId3;
 	Figure::CurFigure m_figureId4;
+	int m_moveId;
 	int m_xPosToMove;
 	int m_yPosToMove;
 	/*int* m_figureId2 = nullptr;

@@ -7,7 +7,7 @@
 
     class King : public Figure
     {
-    public:
+    public: 
         King(int xPos, int yPos, Clr clr);
        
         bool CanMoveToPosition( int xPos,  int yPos) override;

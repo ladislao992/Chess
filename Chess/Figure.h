@@ -33,10 +33,11 @@ enum Clr {
         //SetCurrentCoordinates(xPos, yPos);
         //virtual bool MoveToPosition(int xPos, int yPos)=0;
 
-    //protected:
-        int GetX();
-        int GetY();
-    private:
+    protected: 
+        int GetX(); 
+        int GetY(); 
+    private: 
+
         CurFigure m_element;
         
     };

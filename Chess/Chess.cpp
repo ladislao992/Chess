@@ -10,10 +10,11 @@
 
 int main()
 {
-	
+	ChessField a;
+	int d = a.GetId();
 
 	
 
 	std::cout << "you lame, man";
-
+	 
 }
