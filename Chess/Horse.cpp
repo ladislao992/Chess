@@ -1,7 +1,7 @@
 #include "Horse.h"
 
 
-Horse::Horse(int xPos, int yPos, Color clr) :
+Horse::Horse(int xPos, int yPos, Clr clr) :
     Figure(xPos, yPos, clr)
 {
 

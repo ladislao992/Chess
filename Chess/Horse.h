@@ -8,7 +8,7 @@
     class Horse : public Figure
     {
     public:
-        Horse(int xPos, int yPos, Color clr);       
+        Horse(int xPos, int yPos, Clr clr);       
         bool CanMoveToPosition( int xPos,   int yPos);
     private:
 

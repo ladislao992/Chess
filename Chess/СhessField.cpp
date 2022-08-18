@@ -1,11 +1,25 @@
 #include "ÑhessField.h"
 
-ÑhessField::ÑhessField(int xPos, int yPos)
-	
+
+ChessField::ChessField()
+//Hard the stock figure positions
 {
 }
-bool Step(int xPos, int yPos)
+
+void ChessField:: SetMovePos() {
+	std::cout << "Enter 'Figure id' and new pos with space beetwen";
+	//std::cin >> id;
+	std::cin >> m_xPosToMove >> m_yPosToMove;
+}
+bool ChessField::Step()
 {
-	bool CanMoveToPosition(xPos, yPos);
-	return ;
+	SetMovePos();
+	// King::CanMoveToPosition(m_xPosToMoves, m_yPosToMove)
+	if (1) 
+	{
+		return true;
+	}
+	else
+		return false;
+	
 }

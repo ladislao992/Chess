@@ -1,7 +1,7 @@
 #include "King.h"
 
 
-King::King(int xPos, int yPos, Color clr) :
+King::King(int xPos, int yPos, Clr clr) :
     Figure(xPos, yPos, clr)
 {
 

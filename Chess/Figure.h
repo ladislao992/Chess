@@ -8,36 +8,38 @@
 		был уникальным
 		SetCurrentCoordinates(xPos, yPos)
 };*/
-enum Color {
-        white,
-        black
+enum Clr {
+    ClrError,    
+    ClrWhite,
+    ClrBlack
     };
    
     enum xPos {
-        A = 1, B = 2, C = 3, D = 4, E = 5, F = 6, G = 7, H = 8
+        xPosError,A,B,C,D,E,F,G,H
     };
-        
+    
     class Figure {
     public:
-       
-        Figure(int xPos, int yPos,Color clr);      
-        Color GetColor();                               
+        struct CurFigure {
+            int xPos;
+            int yPos;
+            int id;
+            Clr color;
+        };
+        Figure(int xPos, int yPos,Clr clr);      
+        Clr GetColor()const;                               
         virtual bool CanMoveToPosition(int xPos, int yPos)=0;
-        // void GetFigureId();                                       //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
+        int GetFigureId() const;                                       //-у каждой фигуры есть идентификатор, тип не важен, главное чтобы он был уникальным
         //SetCurrentCoordinates(xPos, yPos);
         //virtual bool MoveToPosition(int xPos, int yPos)=0;
 
-    protected:
+    //protected:
         int GetX();
         int GetY();
     private:
-        int m_xPos;
-        int m_yPos;
-        Color m_color;
-       
-        int m_id;
-       
+        CurFigure m_element;
+        
     };
 
-    inline int Figure::GetX() { return m_xPos; }
-    inline int Figure::GetY() { return m_yPos; }
+    inline int Figure::GetX() { return m_element.xPos; }
+    inline int Figure::GetY() { return m_element.yPos; }

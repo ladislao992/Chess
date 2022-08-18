@@ -1,19 +1,18 @@
 #include "Figure.h"
 
-
-Figure::Figure(int xPos, int yPos, Color clr):
-	m_xPos(xPos),
-	m_yPos(yPos),
-	m_color(clr)
+int numToId = 0;
+Figure::Figure(int xPos, int yPos, Clr clr)	
 {
-
-}
-
-Color Figure::GetColor()
-{
-	return m_color;
+	m_element.xPos = xPos;
+	m_element.yPos = yPos;
+	m_element.color = clr;
+	m_element.id =++numToId ;
 	
+}
+Clr Figure::GetColor()const
+{
+	return m_element.color;
 };
-
-
-
+int Figure::GetFigureId() const {
+	return m_element.id;
+};
