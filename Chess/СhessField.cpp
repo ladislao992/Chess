@@ -4,52 +4,43 @@
 ChessField::ChessField()
 //Hard the stock figure positions
 {
-	m_figureId1.xPos = B;
-	m_figureId1.yPos = 1;
-	m_figureId1.color=ClrWhite;
-	m_figureId2.xPos = D;
-	m_figureId2.yPos = 1;
-	m_figureId2.color = ClrWhite;
-	m_figureId3.xPos = G;
-	m_figureId3.yPos = 8;
-	m_figureId3.color = ClrBlack;
-	m_figureId4.xPos = D;
-	m_figureId4.yPos = 8;
-	m_figureId4.color = ClrBlack;
-	Horse el1(m_figureId1.xPos, m_figureId1.yPos, m_figureId1.color);
-	King  el2(m_figureId2.xPos, m_figureId2.yPos, m_figureId2.color);
-	Horse el3(m_figureId3.xPos, m_figureId3.yPos, m_figureId3.color);
-	King  el4(m_figureId4.xPos, m_figureId4.yPos, m_figureId4.color);
-
-}
-
-void ChessField:: SetMovePos() {
-	std::cout << "Enter 'Figure id' and after enter new pos with space beetwen";
-	
-	std::cin >> m_moveId;
-	
-	std::cin >> m_xPosToMove >> m_yPosToMove;
-}
-int ChessField::GetId()
-{
-	return m_figureId1.id;
+	nabor.push_back(new Horse(B, 1, ClrWhite));
+	nabor.push_back(new King(D, 1, ClrWhite));
+	nabor.push_back(new Horse(G, 8, ClrBlack));
+	nabor.push_back(new King(D, 8, ClrBlack));	
 }
 
 bool ChessField::Step()
 {
-	SetMovePos();
-	if (m_moveId == 1 || 3) {
-	//bool King::CanMoveToPosition(m_xPosToMoves, m_yPosToMove)
+	int moveId;
+	int xPosToMove;
+	int yPosToMove;
+
+	std::cout << "Enter 'Figure id' and after enter new pos with space beetwen\n";
+
+	std::cin >> moveId;
+	
+	std::cin >> xPosToMove >> yPosToMove;
+
+	return Move(nabor[moveId], xPosToMove, yPosToMove);
 
 }
-	else {
-	//bool Horse::CanMoveToPosition(m_xPosToMoves, m_yPosToMove)
-	}
-	 if(1){
+
+bool ChessField::Move(Figure* fig, int xPos, int yPos)
+{
 	
-		return true;
+	return fig->SetCurrentCoordinates(xPos, yPos);
+}
+
+ChessField::~ChessField()
+{
+	int length = nabor.size();
+	for (int i = 0; i < length; ++i)
+	{
+		delete nabor[i];
 	}
-	else
-		return false;
-	
+	/*for (auto el: nabor)
+	{
+		delete el;
+	}*/
 }

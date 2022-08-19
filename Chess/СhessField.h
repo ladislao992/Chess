@@ -2,6 +2,7 @@
 #include "Figure.h"
 #include "King.h"
 #include "Horse.h"
+#include <vector>
 /*class СhessField {
   СhessField() - расставляет фигуры в начальные позиции позиции
   "4 раза передать в конструктор фигуры позиции и колер"
@@ -26,30 +27,19 @@
 	figureId4.xPos = 8;
 	figureId4.xPos = D;
 	figureId1.color = ClrBlack;*/
-#include "Figure.h"
-class ChessField 
+
+class ChessField
 {
 public:
-	
+
 	ChessField();
-	void SetMovePos();
-	int GetId();
+	~ChessField();
+	//void SetMovePos();
+	bool Move(Figure*, int xPos, int yPos);
+	//int GetId();
 
 	bool Step();
 private:
-
-	Figure::CurFigure m_figureId1;
-	Figure::CurFigure m_figureId2;
-	Figure::CurFigure m_figureId3;
-	Figure::CurFigure m_figureId4;
-	int m_moveId;
-	int m_xPosToMove;
-	int m_yPosToMove;
-	/*int* m_figureId2 = nullptr;
-	int* m_figureId3 = nullptr;
-	int* m_figureId4 = nullptr;*/
-	
-
+	std::vector<Figure*> nabor;
 };
 
-	

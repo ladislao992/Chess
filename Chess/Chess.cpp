@@ -11,9 +11,14 @@
 int main()
 {
 	ChessField a;
-	int d = a.GetId();
 
-	
+	while (true) {
+		if (a.Step())
+			std::cout << "Success" << std::endl;
+		else {
+			std::cout << "Falce move" << std::endl;
+		}
+	}
 
 	std::cout << "you lame, man";
 	 
